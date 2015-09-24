@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html data-ng-app="login">
+<head>
+    <title>Login Component</title>
+    <meta charset="utf-8"/>
+    <script src="node_modules/angular/angular.min.js"></script>
+</head>
+<body>
+<div data-ng-controller="login-controller">
+    <div data-ng-show="loginData.isfail">
+        User name/ID:<br>
+        <input type="text" name="username" data-ng-model="loginData.user_name">
+        <br>
+        User password:<br>
+        <input type="password" name="pw" data-ng-model="loginData.password"><br><br>
+        <button data-ng-click="login()">Login</button>
+    </div>
+
+    <div data-ng-show="loginData.islogin">
+        <h1>{{loginData.success}}</h1>
+        <button data-ng-click="logout()">Logout</button>
+    </div>
+</div>
+</body>
+<script src="js/login_controller.js"></script>
+</html>
+
